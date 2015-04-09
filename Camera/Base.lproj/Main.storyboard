@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D130a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+    </dependencies>
+    <scenes>
+        <!--Item-->
+        <scene sceneID="K77-vG-1kU">
+            <objects>
+                <viewController id="1iA-PT-4xb" customClass="filterViewController" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3cA-QQ-lwq"/>
+                        <viewControllerLayoutGuide type="bottom" id="JVR-Xl-RLV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8RP-So-UK2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jPO-5q-X3S">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="505"/>
+                                </variation>
+                            </imageView>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="kL8-LV-TBs">
+                                <rect key="frame" x="0.0" y="-15" width="118" height="31"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="105" y="513" width="163" height="31"/>
+                                </variation>
+                                <connections>
+                                    <action selector="intensityChanged:" destination="1iA-PT-4xb" eventType="valueChanged" id="aBi-o6-v4d"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="jPO-5q-X3S"/>
+                                <exclude reference="kL8-LV-TBs"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="jPO-5q-X3S"/>
+                                <include reference="kL8-LV-TBs"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="FUt-dV-iLn"/>
+                    <toolbarItems>
+                        <barButtonItem title="Filter" id="TRe-xw-27a">
+                            <connections>
+                                <action selector="changeFilter:" destination="1iA-PT-4xb" id="ven-ku-AFP"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="290" style="plain" systemItem="fixedSpace" id="C1f-gx-4gO"/>
+                        <barButtonItem title="Save" id="Zsi-nf-rzF">
+                            <connections>
+                                <action selector="save:" destination="1iA-PT-4xb" id="xYJ-TX-W0w"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RBV-nz-BIz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7779" y="350"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="bRI-Ql-skI">
+            <objects>
+                <viewController id="KbA-KH-qx2" customClass="CameraViewController" customModule="Camera" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gEp-Nf-FkF"/>
+                        <viewControllerLayoutGuide type="bottom" id="F7a-OW-yos"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1lg-ia-49x">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholderimage" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-BM-LgC">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <gestureRecognizers/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="536"/>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="dZZ-BM-LgC"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="dZZ-BM-LgC"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <toolbarItems>
+                        <barButtonItem image="cameraroll-default" id="Sig-2w-bQK">
+                            <connections>
+                                <action selector="photoLibrary:" destination="KbA-KH-qx2" id="FUg-7K-hH3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="127" style="plain" systemItem="fixedSpace" id="owV-Gc-3F4"/>
+                        <barButtonItem systemItem="camera" id="d5P-Pf-xGw">
+                            <connections>
+                                <action selector="takePhoto:" destination="KbA-KH-qx2" id="ozW-Rl-uAC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem width="119" style="plain" systemItem="fixedSpace" id="IMt-CL-6BJ"/>
+                        <barButtonItem title="Filters" id="FgB-0V-LC5">
+                            <connections>
+                                <segue destination="1iA-PT-4xb" kind="show" id="qje-P8-fsh"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
+                    <navigationItem key="navigationItem" id="Dgg-7e-cx6"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="dZZ-BM-LgC" id="8j5-O3-Gh6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qka-fS-hAb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7053" y="350"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ubm-Pe-wbR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HR6-nK-9Lw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7DT-yn-oJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KbA-KH-qx2" kind="relationship" relationship="rootViewController" id="s1q-hi-q4S"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cEs-ET-Tfn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6375" y="350"/>
+        </scene>
+        <!--Item 2-->
+        <scene sceneID="xZ7-jB-gKR">
+            <objects>
+                <viewController id="eUC-jI-KEG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bf6-Cx-cc5"/>
+                        <viewControllerLayoutGuide type="bottom" id="hZN-Wq-8bK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ERY-u8-Xvh">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 2" id="Pzn-ov-WCg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jb1-EL-tvQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="xyJ-04-kTJ">
+            <objects>
+                <viewController id="CWL-Q8-mSO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZjU-j1-eE8"/>
+                        <viewControllerLayoutGuide type="bottom" id="qEh-DH-GJc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QYQ-uo-z3x">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item 1" id="xgG-KQ-7eM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jAB-zt-YK5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="Smw-bS-cxh">
+            <objects>
+                <tabBarController id="oMT-aH-ChZ" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="aDY-bb-TXt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="CWL-Q8-mSO" kind="relationship" relationship="viewControllers" id="Pki-T5-XZV"/>
+                        <segue destination="eUC-jI-KEG" kind="relationship" relationship="viewControllers" id="7kD-gU-QrS"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D0g-Be-Eba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cameraroll-default" width="44" height="44"/>
+        <image name="placeholderimage" width="307" height="414"/>
+    </resources>
+</document>
